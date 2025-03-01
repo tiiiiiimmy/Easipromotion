@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace EasiPromotion.Api.Models;
 
 public class ProductData
@@ -8,7 +10,10 @@ public class ProductData
     public string Unit { get; set; } = "each";
     public string? ImagePath { get; set; }
     public int PosterId { get; set; }
+    
+    [JsonIgnore]
     public Poster? Poster { get; set; }
+    
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime? UpdatedAt { get; set; }
 
